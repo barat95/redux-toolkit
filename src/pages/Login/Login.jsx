@@ -14,7 +14,6 @@ const Login = () => {
   const handleSubmit = (event) => {
     dispatch(loginSubmit(sendFormData(event)));
   };
-
   const formFields = [
     {
       label: "Email",
