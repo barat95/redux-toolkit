@@ -1,5 +1,5 @@
 const _ = require("lodash");
-const secretKey = "app.Vitiligo753";
+const secretKey = "app.YOUR_APP_NAME753"; // Any secret key you wish to use to protect your user (encrypt user object) object on browser
 const CryptoJS = require("crypto-js");
 
 export const devLog = (message, params) => {

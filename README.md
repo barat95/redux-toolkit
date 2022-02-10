@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Features implemented in this APP
+Redux-Toolkit (easiest way to implement to redux with very less code)
+Redux-Saga Api Middleware
+Multilingual for multiple language support
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -5,11 +5,15 @@ import { Container, Form, Row, Col } from "react-bootstrap";
 import Constants from "../../utils/Constants";
 import { sendFormData } from "../../utils/Helper";
 import { loginSubmit } from "../../redux/reducers/AuthReducer";
-import SubmitButton from "../SubmitButton/SubmitButton";
+import SubmitButton from "../../components/SubmitButton/SubmitButton";
+import { useIntl } from "react-intl";
+import { defaultLang } from "../../redux/reducers/LangReducer";
+import { setStorageData } from "../../utils/Helper";
 
 const Login = () => {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.AuthReducer.loading);
+  const intl = useIntl();
 
   const handleSubmit = (event) => {
     dispatch(loginSubmit(sendFormData(event)));
@@ -31,12 +35,19 @@ const Login = () => {
     },
   ];
 
+  const handleLanguage = (event) => {
+    let value = event.target.value;
+    setStorageData("lang", value);
+    dispatch(defaultLang({ locale: value }));
+  };
+
   return (
     <div>
       <Container className="justify-content-center d-flex align-items-center h-100vh">
         <Row className="max-wd">
           <Col sm="12">
             <Form onSubmit={handleSubmit}>
+              <h2>{intl.formatMessage({ id: "loginHeading" })}</h2>
               {formFields.map((data, index) => (
                 <Form.Group as={Row} key={index}>
                   <Form.Label column sm="2">
@@ -59,6 +70,11 @@ const Login = () => {
                   loader={loading}
                   buttonClass="login-btn"
                 />
+                <select className="form-control" onChange={handleLanguage}>
+                  <option value={""}>Select Language</option>
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                </select>
               </Form.Group>
               <Form.Group className="text-right">
                 <NavLink exact to={Constants.base_path + "forgot-password"}>
