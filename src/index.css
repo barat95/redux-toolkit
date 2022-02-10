@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+.loginWrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.app-logo {
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+.h-100vh {
+  height: 100vh;
+}
+
+.max-wd {
+  max-width: 600px;
+}
+
+.login-btn {
+  width: 132px;
+}
+
+.MuiToolbar-regular {
+  background-color: #fff;
+}
+
+.app-content {
+  padding: 24px;
+}
+table thead {
+  background: #1b2330;
+  color: #fff;
+  font-weight: bold;
+}
+
+.app-heading {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
